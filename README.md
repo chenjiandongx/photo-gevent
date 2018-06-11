@@ -5,7 +5,7 @@
 #### gevent/queue
 之前写多线程/多进程爬虫一直没有用到第三方库，后来看了 gevent 的文档，觉得可以来试试。觉得还是拿妹子爬虫来试可能比较好一点，毕竟兴趣是最好的老师...
 
-主要是使用了 gevent 的 Pool 模块，这应该是一个线程池。然后使用标准库 queue 作队列。
+主要是使用了 gevent 的 Pool 模块，是一个 `greenlets` 池（协程）。然后使用标准库 queue 作队列。
 
 关于 queue 官方的介绍如下
 > The queue module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming when information must be exchanged safely between multiple threads.
