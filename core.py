@@ -129,5 +129,8 @@ class Downloader:
 
 
 if __name__ == "__main__":
-    downloader = Downloader()
-    downloader.run()
+    try:
+        downloader = Downloader()
+        downloader.run()
+    except KeyboardInterrupt:
+        print("You have canceled all jobs.")
