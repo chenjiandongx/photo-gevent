@@ -2,6 +2,7 @@
 
 ## 概述
 
+#### gevent 于 queue
 之前写多线程/多进程爬虫一直没有用到第三方库，后来看了 gevent 的文档，觉得可以来试试。觉得还是拿妹子爬虫来试可能比较好一点，毕竟兴趣是最好的老师...
 
 主要是使用了 gevent 的 Pool 模块，这应该是一个线程池。然后使用标准库 queue 作队列。
@@ -11,7 +12,8 @@
 
 queue 是线程安全的，也就是不存在同时读写同一个 item 的情况。在 queue 的基础上，我新增了重试限制功能，避免无限次对一个 item 进行重试。
 
-资源占用情况（机器配置 i7 7700 HQ + 16G RAM）
+#### 资源占用情况
+> （机器配置 i7 7700 HQ + 16G RAM）
 
 ```bash
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
@@ -32,9 +34,9 @@ $ wc -l data.txt
 #### 运行代码
 ```bash
 $ git clone https://github.com/chenjiandongx/photo-gevent.git 
-& cd photo-gevent
-& pip install -r requirements.txt # 安装依赖
-& python core.py
+$ cd photo-gevent
+$ pip install -r requirements.txt # 安装依赖
+$ python core.py
 ```
 
 #### 断续下载
