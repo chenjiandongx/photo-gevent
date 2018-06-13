@@ -40,13 +40,6 @@ class Config:
         "(KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
     )
 
-    DOMAIN = {"mzitu": "http://i.meizitu.net/", "mmjpg": "http://img.mmjpg.com/"}
-
-    HEADERS = {
-        DOMAIN["mzitu"]: {"User-Agent": USER_AGENT, "Referer": "http://www.mzitu.com"},
-        DOMAIN["mmjpg"]: {"User-Agent": USER_AGENT, "Referer": "http://www.mmjpg.com"},
-    }
-
 
 CONFIG = Config()
 
@@ -95,10 +88,16 @@ class Downloader:
         """
         根据对应 url 返回 headers
         """
-        if url.startswith(CONFIG.DOMAIN["mzitu"]):
-            return CONFIG.HEADERS.get(CONFIG.DOMAIN["mzitu"])
-        if url.startswith(CONFIG.DOMAIN["mmjpg"]):
-            return CONFIG.HEADERS.get(CONFIG.DOMAIN["mmjpg"])
+        if url.startswith("http://i.meizitu.net/"):
+            return {
+                "User-Agent": CONFIG.USER_AGENT,
+                "Referer": "http://www.mzitu.com"
+            }
+        if url.startswith("http://img.mmjpg.com/"):
+            return {
+                "User-Agent": CONFIG.USER_AGENT,
+                "Referer": "http://www.mmjpg.com"
+            }
 
     def download(self):
         """
