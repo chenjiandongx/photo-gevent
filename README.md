@@ -28,7 +28,7 @@ queue 是线程安全的，也就是不存在同时读写同一个 item 的情�
 图片地址数据保存在了 `data.txt`，共 17w+ 张照片，图片的数据是我从 [mmjpg](https://github.com/chenjiandongx/mmjpg) 和 [mzitu](https://github.com/chenjiandongx/mzitu) 里提取出来的。
 ```bash
 $ wc -l data.txt
-178108 data.txt
+178075 data.txt
 ```
 
 #### 运行代码
@@ -41,6 +41,14 @@ $ python core.py
 
 #### 断续下载
 图片名是经过 hash 过的唯一值（重名的概率基本为 0），所以在任意时间 `Ctrl+C` 暂停项目后都可以随时启动继续下载，会自动跳过重名图片。大大的提高效率。 
+
+**最终成果**
+
+![image](https://user-images.githubusercontent.com/19553554/41342877-d3ac629e-6f2f-11e8-961e-bb75c15e941c.png)
+
+朦胧美
+
+![image_183](https://user-images.githubusercontent.com/19553554/41343119-5cb85534-6f30-11e8-9e53-0ec45ebbe6d0.png)
 
 
 ## License
