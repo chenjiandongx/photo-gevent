@@ -1,5 +1,10 @@
 # 美女写真图爬虫 gevent 版
 
+*其他版本*
+
+* [photo-go 版](https://github.com/chenjiandongx/photo-go)
+* [photo-asyncio 版](https://github.com/chenjiandongx/photo-asyncio)
+
 ## 概述
 
 #### gevent/queue
